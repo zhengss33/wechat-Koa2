@@ -1,7 +1,4 @@
 # azkaban
-
-> 
-
 ## Build Setup
 
 ``` bash
