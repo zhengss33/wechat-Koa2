@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" />
+    <img src="../static/img/logo.png" alt="Nuxt.js Logo" />
     <h1 class="title">
       {{ error.statusCode }}
     </h1>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .title
 {
   margin-top: 15px;

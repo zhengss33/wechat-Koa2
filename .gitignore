@@ -91,3 +91,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+server/config
+
+ecosystem.json
+
+.DS_Store

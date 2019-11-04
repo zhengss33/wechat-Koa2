@@ -19,6 +19,7 @@ module.exports = {
         named: 'never'
       }
     ],
+    'no-return-await': 0
   },
   globals: {}
 }

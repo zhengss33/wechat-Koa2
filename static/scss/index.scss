@@ -1,0 +1,256 @@
+@import './mixin.scss';
+@import './variable';
+@import './colors';
+
+.container {
+  @include border-box;
+  padding-bottom: $navHeight;
+
+  .banner-cover {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .banner {
+      display: block;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      transform: scale(1.1);
+      opacity: 0;
+      transition: all 3s ease 0.5s;
+
+      &.active {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, rgba(16, 20, 27, 0), rgba(16, 20, 27, 0.72) 32%, #10141b 60%, rgba(16, 20, 27, 0));
+      }
+    }
+    .banner-title {
+      margin: 100px auto 20px;
+      font-family: "Mason Sans OT", serif;
+      font-size: 20px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      position: relative;
+      top: -50px;
+      opacity: 0;
+      transition: all 1.5s ease-in 0.3s;
+
+      &.active {
+        top: 0;;
+        opacity: 1;
+      }
+    }
+  
+    .banner-subtitle {
+      display: block;
+      width: 250px;
+      margin: 0 auto;
+      transform: scale(0.5);
+      opacity: 0;
+      transition: all 2s ease-in 0.3s;
+
+      &.active {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  .colleges {
+    margin-top: -40%;
+    padding: 0 0 $spacing;
+    @include x-scroll;
+    margin-bottom: 30px;
+    background: #fff;
+
+    .college-item {
+      margin-left: $spacing/2;
+      width: 90%;
+      font-size: 0;
+      display: inline-block;
+
+      &:first-child {
+        margin-left: $spacing;
+      }
+
+      &:last-child {
+        margin-right: $spacing;
+      }
+
+      .college-flag {
+        display: block;
+        width: 100%;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .college-desc {
+        width: 100%;
+        padding: $spacing/2 0;
+        @include font-dpr(12px);
+        @include border-box;
+        @include break-word;
+  
+        .words {
+          margin-bottom: 10px;
+          font-size: 1.2em;
+          color: $grey-700;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+  
+        .cname {
+          font-size: 1.6em;
+          color: $black;
+        }
+  
+        .name {
+          font-size: 1.3em;
+          color: $grey-700;
+        }
+      }
+    }
+  }
+
+  .characters {
+    padding: 0 $spacing;
+    margin-bottom: $spacing;
+    background: $white;
+    @include border-box;
+
+    .character-title {
+      @include font-dpr(22px);
+      padding: $spacing 0;
+      border-top: 1px solid $grey-400;
+      font-weight: 500;
+    }
+
+    .character-container {
+      padding: 0 0 $spacing;
+      border-bottom: 1px solid $grey-400;
+      font-size: 0;
+
+      .character-item {
+        width: 47.5%;
+        @include break-word;
+        display: inline-block;
+        margin-bottom: $spacing * 2;
+
+        &:nth-child(2n) {
+          margin-left: 5%;
+        }
+
+        .character-profile {
+          display: block;
+          width: 100%;
+          height: 200px;
+          box-shadow: 1px 3px 3px 0px $grey-600;
+          margin-bottom: $spacing/3;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .character-desc {
+          @include font-dpr(12px);
+
+          .cname {
+            font-size: 1.4em;
+            color: $black;
+            @include text-overflow;
+          }
+
+          .name {
+            font-size: 1.2em;
+            color: $grey-600;
+          }
+
+          .playedby {
+            font-size: 1.2em;
+            color: $grey-600;
+          }
+        }
+      }
+    }
+  }
+
+  .school {
+    padding: 0 $spacing $spacing;
+    margin-top: 30px;
+    @include font-dpr(14px);
+    @include border-box;
+    line-height: 2em;
+    position: relative;
+
+    .school-title {
+      @include font-dpr(22px);
+      padding: $spacing 0;
+      margin-bottom: 10px;
+      font-weight: 500;
+
+      .school-subtitle {
+        display: block;
+        font-size: 0.8em;
+        line-height: 1.2em;
+        color: $grey-600;
+        font-weight: 400;
+        letter-spacing: normal;
+      }
+    }
+
+    .school-intro {
+      font-size: 1em;
+      line-height: 1.8em;
+      color: $grey-700;
+    }
+
+    .school-subjects {
+      margin-top: $spacing*2;
+
+      .subject-title {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+      }
+
+      .subject {
+        margin-bottom: 15px;
+        font-size: 1em;
+        color: $grey-800;
+
+        .subject-name {
+          font-size: 1.3em;
+          color: $grey-900;
+        }
+      }
+    }
+  }
+}
+
+

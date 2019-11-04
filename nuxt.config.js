@@ -11,12 +11,23 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'http://res.wx.qq.com/open/js/jweixin-1.4.0.js' }
     ]
   },
   /*
   ** Global CSS
   */
-  css: ['~assets/css/main.css'],
+  css: [
+    {
+      src: 'static/scss/base.scss',
+      lang: 'scss'
+    },
+    {
+      src: 'swiper/dist/css/swiper.css'
+    }
+  ],
   /*
   ** Customize the progress-bar color
   */
@@ -28,8 +39,8 @@ module.exports = {
     /*
      ** Run ESLINT on save
      */
-    extend (config, ctx) {
-      if (ctx.isClient) {
+    extend(config, ctx) {
+      if (ctx.isDev && process.client) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -38,5 +49,11 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  plugins: [
+    {
+      src: '~plugins/swiper.js'
+    }
+  ]
 }
