@@ -27,7 +27,7 @@
     "koa-session": "^5.12.3",
     "lodash": "^4.17.15",
     "mongoose": "^5.6.12",
-    "node-sass": "4.5.3",
+    "node-sass": "4.13.1",
     "nuxt": "latest",
     "pug": "^2.0.4",
     "qiniu": "^7.2.2",
