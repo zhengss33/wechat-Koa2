@@ -14,7 +14,7 @@
     "server": "NODE_ENV=production node ./server.js"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-latest-node": "0.2.2",
     "bcrypt": "^3.0.6",
